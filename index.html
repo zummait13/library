@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+
+    <link rel="stylesheet" href="style_reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-layout">
+        <div class="sidebar">
+            <button class="close-sidebar">X</button>
+            <form action="" method="post">
+                <div class="row">
+                    <legend>Title</legend>
+                    <input type="text" name="book-title" id="inpBookTitle" required>
+                </div>
+                <div class="row">
+                    <legend>Author</legend>
+                    <input type="text" name="book-author" id="inpBookAuthor" required>
+                </div>
+                <div class="row">
+                    <legend>Description</legend>
+                    <textarea name="book-description" id="inpBookDescript" cols="40" rows="5"></textarea>
+                </div>
+                <div class="checkbox-row">
+                    <legend>Read</legend>
+                    <input type="checkbox" name="book-read" id="inpBookRead">
+                </div>
+                <div class="row">
+                    <legend>File of book</legend>
+                    <input type="file" name="book-file" id="inpBookFile">
+                </div>
+                <button type="submit">Add book</button>
+            </form>
+        </div>
+        <div class="content-section">
+            <h1>My Library</h1>
+            <button>NEW BOOK</button>
+            <div class="books-grid">
+                <div class="book-card">
+                    <button class="book-delete">X</button>
+                    <p class="title">Title</p>
+                    <p class="author">Author</p>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates harum corporis sed suscipit facere, tenetur repellat, debitis totam architecto deserunt assumenda vitae dolore voluptatum autem natus impedit placeat earum rerum?</p>
+                    <button class="book-open-file">Open Book</button>
+                    <span>Read</span>
+                </div>
+                <div class="book-card">
+                    <button class="book-delete">X</button>
+                    <p class="title">Title</p>
+                    <p class="author">Author</p>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates harum corporis sed suscipit facere, tenetur repellat, debitis totam architecto deserunt assumenda vitae dolore voluptatum autem natus impedit placeat earum rerum?</p>
+                    <button class="book-open-file">Open Book</button>
+                    <span>Read</span>
+                </div>
+                <div class="book-card">
+                    <button class="book-delete">X</button>
+                    <p class="title">Title</p>
+                    <p class="author">Author</p>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates harum corporis sed suscipit facere, tenetur repellat, debitis totam architecto deserunt assumenda vitae dolore voluptatum autem natus impedit placeat earum rerum?</p>
+                    <button class="book-open-file">Open Book</button>
+                    <span>Read</span>
+                </div>
+                <div class="book-card">
+                    <button class="book-delete">X</button>
+                    <p class="title">Title</p>
+                    <p class="author">Author</p>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates harum corporis sed suscipit facere, tenetur repellat, debitis totam architecto deserunt assumenda vitae dolore voluptatum autem natus impedit placeat earum rerum?</p>
+                    <button class="book-open-file">Open Book</button>
+                    <span>Read</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

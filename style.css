@@ -1,0 +1,109 @@
+button {
+    cursor: pointer;
+}
+
+/* BASE PAGE LAYOUT */
+
+.page-layout {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
+
+.sidebar {
+    grid-column: 1;
+
+    position: relative;
+
+    padding: 32px;
+
+    background-color: #fafafa;
+}
+
+.content-section {
+    grid-column: 2;
+}
+
+/* SIDEBAR LAYOUT */
+
+button.close-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.sidebar form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+.checkbox-row {
+    display: flex;
+    gap: 8px;
+}
+
+form button[type = 'submit'] {
+    align-self: flex-start;
+}
+
+/* CONTENT LAYOUT */
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+
+    padding: 5vh min(10vw, 480px);
+    align-items: center;
+}
+
+.content-section h1 {
+    margin-bottom: 32px;
+}
+
+.content-section > button {
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.books-grid {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    grid-auto-flow: row;
+
+    margin-top: 16px;
+    gap: 32px;
+}
+
+.book-card {
+    position: relative;
+
+    padding: 32px 16px;
+
+    background-color: #fafafa;
+}
+
+button.book-delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.book-card span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    padding: 8px;
+}
+
+.book-card .title {
+    font-size: 1.5rem;
+}
+
+.book-card .description {
+    padding: 16px 0;
+}
