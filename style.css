@@ -41,8 +41,9 @@ button.close-sidebar {
     gap: 16px;
 }
 
-.checkbox-row {
+.row {
     display: flex;
+    flex-direction: column;
     gap: 8px;
 }
 

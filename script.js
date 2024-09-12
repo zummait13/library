@@ -1,16 +1,22 @@
 const myLibrary = [];
+displayBooks(myLibrary);
 
-function Book(title, author, description, read) {
-    this.title = title;
-    this.author = author;
-    this.description = description;
-    this.readStatus = read;
-    this.filePath = file;
-}
+const bookForm = document.querySelector("form");
 
-function addNewBookToLibrary() {
-    // get values for book
-    myLibrary.push(new Book(/*book values*/));
+bookForm.addEventListener("submit", e => {
+    e.preventDefault();
+
+    let formData = new FormData(bookForm);
+    let book = Object.fromEntries(formData);
+
+    console.log(book);
+
+    addNewBookToLibrary(book);
+})
+
+function addNewBookToLibrary(book) {
+    myLibrary.push(book);
+    displayNewBook(book);
 }
 
 function displayBooks(library) {
@@ -23,15 +29,29 @@ function displayBooks(library) {
                     <p class="title">${book.title}</p>
                     <p class="author">${book.author}</p>
                     <p class="description">${book.description}</p>
-                    <a class="book-open-file" href="${book.file}" download="${book.title}">Open Book</button>
-                    <span>${book.readStatus}</span>
+                    <a class="book-open-file" href="${book.file}" download="${book.title}">Open Book</a>
+                    <span>${book.read}</span>
         `;
 
         bookShelf.appendChild(bookCard);
     });
 }
 
+function displayNewBook(book) {
+    const bookCard = document.createElement("div")
+    bookCard.classList.add("book-card");
+
+    bookCard.innerHTML = `
+                <button class="book-delete">X</button>
+                <p class="title">${book.title}</p>
+                <p class="author">${book.author}</p>
+                <p class="description">${book.description}</p>
+                <a class="book-open-file" href="${book.file}" download="${book.title}">Open Book</a>
+                <span>${book.read}</span>
+    `;
+
+    bookShelf.appendChild(bookCard);
+}
+
 const bookShelf = document.querySelector(".books-grid");
 const submitBtn = document.querySelector("button[type='submit']");
-
-submitBtn.addEventListener("click", displayBooks);
