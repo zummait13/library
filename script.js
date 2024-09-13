@@ -3,8 +3,6 @@ const myLibrary = [];
 const bookShelf = document.querySelector(".books-grid");
 const submitBtn = document.querySelector("button[type='submit']");
 
-// move the read status from form to object prototype
-// change the file status
 // toggle sidebar
 
 // Getting values from form
@@ -49,13 +47,15 @@ function displayNewBook(book) {
 
 function deleteBook_byBtn() {
 
-const deleteBookBtn = document.querySelector(".book-delete");
+const deleteBookBtns = document.querySelectorAll(".book-delete");
 
-deleteBookBtn.addEventListener("click", e => {
-    console.log("click");
-    e.target.parentNode.remove();
+deleteBookBtns.forEach(delBtn => {
+
+    delBtn.addEventListener("click", e => {
+        console.log("click");
+        e.target.parentNode.remove();
+        })
 });
-
 }
 
 // change the read status

@@ -57,7 +57,7 @@ form button[type = 'submit'] {
     display: flex;
     flex-direction: column;
 
-    padding: 5vh min(10vw, 480px);
+    padding: 5vh min(10vw, 320px);
     align-items: center;
 }
 
@@ -72,6 +72,9 @@ form button[type = 'submit'] {
 
 .books-grid {
     display: grid;
+    min-width: 60vw;
+    min-height: 80vh;
+
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     grid-auto-flow: row;
 
