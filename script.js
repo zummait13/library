@@ -41,21 +41,18 @@ function displayNewBook(book) {
 
     bookShelf.appendChild(bookCard);
 
-    deleteBook_byBtn();
+    add_deleteBookListn();
     toggleReadStatus(bookCard);
 }
 
-function deleteBook_byBtn() {
+function add_deleteBookListn() {
 
 const deleteBookBtns = document.querySelectorAll(".book-delete");
+const last_delBtn = deleteBookBtns[deleteBookBtns.length-1];
 
-deleteBookBtns.forEach(delBtn => {
-
-    delBtn.addEventListener("click", e => {
-        console.log("click");
-        e.target.parentNode.remove();
-        })
-});
+last_delBtn.addEventListener("click", e => {
+    e.target.parentNode.remove();
+    });
 }
 
 // change the read status
