@@ -1,5 +1,4 @@
 const myLibrary = [];
-displayBooks(myLibrary);
 
 const bookShelf = document.querySelector(".books-grid");
 const submitBtn = document.querySelector("button[type='submit']");
@@ -7,24 +6,6 @@ const submitBtn = document.querySelector("button[type='submit']");
 // move the read status from form to object prototype
 // change the file status
 // toggle sidebar
-
-function displayBooks(library) {
-    library.forEach(book => {
-        const bookCard = document.createElement("div")
-        bookCard.classList.add("book-card");
-
-        bookCard.innerHTML = `
-                    <button class="book-delete">X</button>
-                    <p class="title">${book.title}</p>
-                    <p class="author">${book.author}</p>
-                    <p class="description">${book.description}</p>
-                    <a class="book-open-file" href="${book.file}" download="${book.title}">Open Book</a>
-                    <span>${book.read}</span>
-        `;
-
-        bookShelf.appendChild(bookCard);
-    });
-}
 
 // Getting values from form
 
@@ -63,6 +44,7 @@ function displayNewBook(book) {
     bookShelf.appendChild(bookCard);
 
     deleteBook_byBtn();
+    toggleReadStatus(bookCard);
 }
 
 function deleteBook_byBtn() {
@@ -74,4 +56,15 @@ deleteBookBtn.addEventListener("click", e => {
     e.target.parentNode.remove();
 });
 
+}
+
+// change the read status
+
+function toggleReadStatus(bookCard) {
+
+    const readElem = bookCard.querySelector("span");
+
+    readElem.addEventListener("click", e => {
+        e.target.textContent = (e.target.textContent == "not read") ? "read" : "not read";
+    })
 }

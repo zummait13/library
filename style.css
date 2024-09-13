@@ -1,4 +1,4 @@
-button {
+button, .book-card span {
     cursor: pointer;
 }
 
