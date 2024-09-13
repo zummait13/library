@@ -4,6 +4,8 @@ const bookShelf = document.querySelector(".books-grid");
 const submitBtn = document.querySelector("button[type='submit']");
 
 // toggle sidebar
+// is not realised https://codepen.io/dphrag/pen/JeayLw
+// need to change grid settings to
 
 // Getting values from form
 
@@ -47,12 +49,14 @@ function displayNewBook(book) {
 
 function add_deleteBookListn() {
 
-const deleteBookBtns = document.querySelectorAll(".book-delete");
-const last_delBtn = deleteBookBtns[deleteBookBtns.length-1];
+    // add listener only to the last book
 
-last_delBtn.addEventListener("click", e => {
-    e.target.parentNode.remove();
-    });
+    const deleteBookBtns = document.querySelectorAll(".book-delete");
+    const last_delBtn = deleteBookBtns[deleteBookBtns.length-1];
+
+    last_delBtn.addEventListener("click", e => {
+        e.target.parentNode.remove();
+        });
 }
 
 // change the read status
